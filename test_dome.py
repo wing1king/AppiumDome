@@ -37,6 +37,11 @@ driver.remove_app("app_id")
 # 布尔类型，True为安装，False为没有安装
 driver.is_app_installed("app_id")
 
+# app放置到后台一定时间后再回到前台，模拟热启动
+# 参数：
+# 后台停留5秒
+driver.background_app(5)
+
 # 关闭当前操作的app，不会关闭驱动对象
 driver.close_app
 

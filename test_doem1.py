@@ -1,7 +1,8 @@
 # 如果《安智市场》已经安装，则卸载《安智市场》，如果没有则安装
 import time
 from appium import webdriver
-desired_caps=dict()
+
+desired_caps = dict()
 # 手机参数
 desired_caps['platformName'] = 'Android'
 desired_caps['platforamversion'] = '5.1'
