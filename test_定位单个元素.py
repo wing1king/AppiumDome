@@ -1,16 +1,16 @@
+"""
+定位单个元素
+"""
 from appium import webdriver
 
-desired_caps = dict()
-# 手机参数
-desired_caps['platformName'] = 'Android'
-desired_caps['platforamversion'] = '5.1'
-desired_caps['deviceName'] = '192.168.56.101:5555'
-# 应用参数
-desired_caps['apppackage'] = 'com.android.settings'
-desired_caps['appActivity'] = '.settings'
-
-# 获取driver
-driver = webdriver.Remote("http://localhost：4723/wd/hub'，desired_caps")
+desired_caps = {
+                'platformName': 'Android',
+                'platformVersion': '5.1',
+                'appPackage': 'com.android.settings',
+                'appActivity': '.Settings',
+                'deviceName':  '127.0.0.1:62001',
+                'noReset': 'True'}
+driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
 # 通过id定位一个元素
 # 参数：
 # id_value：元素的resource-id属性值
