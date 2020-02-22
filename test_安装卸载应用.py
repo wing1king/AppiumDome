@@ -1,5 +1,5 @@
 """
-应用前后台
+安装和卸载应用
 """
 from appium import webdriver
 
@@ -16,13 +16,21 @@ driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
 print(driver.current_package)
 print(driver.current_activity)
 
-# app放置到后台一定时间后再回到前台，模拟热启动
+# 安装app
+# 参致：
+#  app_path:apk路径
+driver.install_app("app_path")
+
+# 卸载app
+# 参数；
+# app_id：应用程序包名
+driver.remove_app("app_id")
+
+# 判断app是否已经安装
 # 参数：
-# 后台停留5秒
-driver.background_app(5)
+# app_id：应用程序包名
+# 返回值：
+# 布尔类型，True为安装，False为没有安装
+driver.install_app("app_path")
 
-# 关闭当前操作的app，不会关闭驱动对象
-driver.close_app
-
-# 关闭驱动对象，同时关闭所有关联的app
 driver.quit()

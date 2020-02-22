@@ -1,5 +1,5 @@
 """
-元素等待
+元素隐式和显式等待
 """
 import time
 from appium import webdriver

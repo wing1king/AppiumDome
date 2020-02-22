@@ -1,4 +1,6 @@
-import time
+"""
+获取元素文本内容
+"""
 from appium import webdriver
 
 desired_caps = {
@@ -7,15 +9,15 @@ desired_caps = {
                 'appPackage': 'com.android.settings',
                 'appActivity': '.Settings',
                 'deviceName':  '127.0.0.1:62001',
-                'noReset': 'True'}
+                # 默认中文无效，需添加 unicodekeyboard，resetkeyboard两个参数
+                'unicodekeyboard': 'True',
+                'resetkeyboard': 'True'}
 driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
-# 如果安装则卸载
-if driver.is_app_installed("cn.goapk.market"):
-    driver.remove_app("包名")
-else:
-    # 安装包路径
-    driver.install_app("/users/roson/oesktop/anzhishichang.apk")
-# 等待
-time.sleep(5)
+
+titles = driver.find_elements_by_id("")
+
+for i in titles:
+    print(i.text)
+
 # 退出
 driver.quit()
