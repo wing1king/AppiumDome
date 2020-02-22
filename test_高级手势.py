@@ -110,7 +110,6 @@ TouchAction(driver).tap(x=400, y=400).perform()
 time.sleep(2)
 TouchAction(driver).long_press(x=400, y=400, duration=2000).release().perform()
 
-
 # 退出
 driver.quit()
 
